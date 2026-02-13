@@ -211,11 +211,14 @@ p.whisper {
 
 @media only screen and (min-width: 0px) and (max-width: 767px) {
   h1.headline {
-    font-size: calc(var(--font-size-900) * 1);
+    font-size: var(--font-size-700);
   }
   p.whisper {
     font-size: var(--font-size-400);
     text-wrap-style: auto;
+  }
+  p {
+    font-size: var(--font-size-400);
   }
   h2,
   h3 {
@@ -439,8 +442,8 @@ section#intro p:last-of-type {
 @media only screen and (min-width: 0px) and (max-width: 900px) {
   section#intro {
     grid: auto/1fr;
-    padding: 2rem 1.5rem 0rem;
-    margin: 0px;
+    padding: var(--spacing-500);
+    margin: 0px auto;
   }
   section#intro > div:nth-child(1) {
     order: 2;
@@ -457,8 +460,9 @@ section#intro p:last-of-type {
   img.profile {
     width: 130px;
   }
-  .portfolio-entry {
+  .portfolio-wrapper .portfolio-entry {
     grid-template-columns: 1fr !important;
+    padding-bottom: var(--spacing-500);
   }
 }
 /* Layout - Footer */
