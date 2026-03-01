@@ -278,7 +278,7 @@ button::after {
 }
 
 .button--controls {
-  background-color: rgba(255, 255, 255, 0.23);
+  background-color: rgba(255, 255, 255, 0.7);
   background-image: url(/images/ui/nav-ui-arrow.svg);
   width: 40px;
   padding: 0px;
@@ -294,7 +294,7 @@ button::after {
   display: none;
 }
 .button--controls:hover {
-  background-color: rgba(255, 255, 255, 0.63);
+  background-color: rgba(255, 255, 255, 0.9);
   background-image: url(/images/ui/nav-ui-arrow.svg);
   background-size: 70%;
   background-repeat: no-repeat;
@@ -412,7 +412,7 @@ section#intro p:last-of-type {
   top: 0px;
   right: 0px;
   font-family: var(--font);
-  background: rgba(0, 0, 0, 0.168627451);
+  background: rgba(0, 0, 0, 0.58);
   color: #fff;
   padding: var(--spacing-200);
   margin: var(--spacing-200);
