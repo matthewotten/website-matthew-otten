@@ -2,13 +2,13 @@
 /* Tokens - Colours */
 :root {
   --base: 16px;
-  --font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Helvetica Neue, sans-serif;
+  --font-serif: 'Neuton', serif;
   --font-weight-300: 300;
   --font-weight-400: 400;
   --font-weight-500: 500;
   --font-weight-600: 600;
-  --font-weight-800: 800;
   --font-weight-700: 700;
+  --font-weight-800: 800;
   --font-weight-900: 900;
   --font-size-100: calc(var(--base) * 0.5);
   --font-size-200: calc(var(--base) * 0.8);
@@ -31,13 +31,13 @@
   --spacing-700: 2.4rem;
   --spacing-800: 3.0rem;
   --spacing-900: 3.8rem;
-  --color-bg-page: hsla(229, 35%, 13%, 1);
-  --color-bg-surface: hsl(229deg 28.42% 27.62%);
+  --color-bg-page: hsl(34.98deg 100% 95.86%);
+  --color-bg-surface: hsl(32.59deg 42.32% 91.59%);
   --color-text: hsla(229, 23%, 91%, 1);
-  --color-text: hsl(229deg 3.31% 66.88%);
-  --color-text-strong: hsl(0, 0%, 100%);
-  --link-color: hsl(177, 100%, 74%);
-  --link-color-hover: hsl(177, 100%, 61%);
+  --color-text: hsl(229deg 10.79% 30.02%);
+  --color-text-strong: hsl(229deg 23.36% 16.62%);
+  --link-color: hsl(263.06deg 100% 47.15%);
+  --link-color-hover: hsl(263, 100%, 36%);
   --button-color-bg: hsl(257, 100%, 55%);
   --button-color-bg-overlay: linear-gradient(360deg, #0000004f, transparent);
   --button-color-bg-hover: hsl(257, 100%, 45%);
@@ -48,8 +48,8 @@
   --button-secondary-color-bg: hsla(217, 21%, 38%, 0.6);
   --button-secondary-color-bg-hover: hsla(217, 41%, 88%, 0.7);
   --button-secondary-color-text: hsla(233, 26%, 100%, 1);
-  --footer-color-bg: hsla(232, 44.4%, 9.7%, 1);
-  --footer-color-text: hsla(229, 23%, 91%, 1);
+  --footer-color-bg: hsl(258.58deg 72% 50.31%);
+  --footer-color-text: hsl(0, 0%, 100%);
   --shadow-colour: hsla(246, 58%, 14%, 0.6);
   --border: 1px solid hsla(0, 0%, 84%, 1);
   --border-radius: 0.6rem;
@@ -88,7 +88,8 @@ img.profile {
   width: 200px;
   border-radius: 200px;
   border: 2px solid rgba(255, 255, 255, 0.0509803922);
-  box-shadow: 0px 21px 10px -20px;
+  box-shadow: 0px 21px 10px -20px hsla(257, 27.88%, 25.22%, 0.75), 0px 41px 40px -30px hsla(257, 71.98%, 21.71%, 0.58), 0px 21px 40px -40px hsla(257, 100%, 79.97%, 0.64);
+  box-sizing: border-box;
 }
 
 /* Base - Typography */
@@ -108,7 +109,7 @@ li {
   color: var(--color-text);
   margin-block-start: 0rem;
   margin-block-end: 0rem;
-  font-family: var(--font-family);
+  font-family: var(--font);
   font-size: var(--font-size-600);
   font-weight: var(--font-weight-300);
 }
@@ -125,14 +126,15 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: var(--font-weight-900);
+  font-weight: var(--font-weight-700);
   text-wrap-style: balance;
   line-height: var(--font-line-height-500);
+  font-family: var(--font-serif);
 }
 
 h1 {
   font-size: var(--font-size-900);
-  font-weight: var(--font-weight-900);
+  font-weight: var(--font-weight-700);
 }
 
 h1.headline {
@@ -141,6 +143,7 @@ h1.headline {
   color: var(--color-text);
   line-height: var(--font-line-height-500);
   margin-bottom: var(--spacing-700);
+  font-family: var(--font-serif);
 }
 
 h1 {
@@ -154,7 +157,7 @@ h3 {
 
 h2,
 h3 {
-  font-weight: var(--font-weight-600);
+  font-weight: var(--font-weight-400);
 }
 
 h1 strong,
@@ -163,11 +166,11 @@ h2 strong,
 h2 b,
 h3 strong,
 h3 b {
-  font-weight: var(--font-weight-900);
+  font-weight: var(--font-weight-700);
 }
 
 h4 {
-  font-size: var(--font-size-600);
+  font-size: var(--font-size-500);
 }
 
 h5 {
@@ -187,6 +190,10 @@ h6,
 p,
 a {
   margin-bottom: var(--spacing-400);
+}
+
+p {
+  font-family: var(--font-serif);
 }
 
 ul,
@@ -325,7 +332,7 @@ button.next.button--controls {
 /* Layout - Home */
 section#intro {
   display: grid;
-  grid: auto/4fr 200px;
+  grid: auto/200px auto;
   gap: var(--spacing-700);
   margin-bottom: var(--spacing-600);
   align-items: start;
@@ -333,10 +340,8 @@ section#intro {
   margin-bottom: var(--spacing-900);
 }
 section#intro p:last-of-type {
-  margin-bottom: 0rem;
-}
-section#intro p:last-of-type {
   margin-bottom: 0px;
+  text-wrap-style: balance;
 }
 
 /* Home - Portfolio */
@@ -406,7 +411,7 @@ section#intro p:last-of-type {
   position: absolute;
   top: 0px;
   right: 0px;
-  font-family: var(--font-family);
+  font-family: var(--font);
   background: rgba(0, 0, 0, 0.168627451);
   color: #fff;
   padding: var(--spacing-200);
@@ -452,12 +457,6 @@ section#intro p:last-of-type {
     padding: var(--spacing-500);
     margin: 0px auto;
   }
-  section#intro > div:nth-child(1) {
-    order: 2;
-  }
-  section#intro > div:nth-child(2) {
-    order: 1;
-  }
   ul.portfolio li {
     margin-bottom: 1rem;
   }
@@ -480,4 +479,7 @@ footer {
 }
 footer p:last-of-type {
   margin: 0rem;
+}
+footer * {
+  color: var(--footer-color-text);
 }/*# sourceMappingURL=matthewotten.css.map */
